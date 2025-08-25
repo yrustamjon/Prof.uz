@@ -1,6 +1,6 @@
 # Prof.uz
 
-<!-- 
+
 Training videos list apps/professions
 Training videos detail apps/professions
 
@@ -11,4 +11,3 @@ User create apps/users
 User login in apps/users 
 
 Banner list apps/common
- -->
