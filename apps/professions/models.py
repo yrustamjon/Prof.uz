@@ -22,7 +22,6 @@ class Profession(BaseModel):
         blank=True,
         related_name='children'
     )
-    
     category = models.ForeignKey(
         Category,
         related_name='professions', 
@@ -76,6 +75,7 @@ class Training(BaseModel):
     video = models.FileField(upload_to='trainings/videos/', blank=True, null=True)
     def __str__(self):
         return self.title
+    
     
     
 

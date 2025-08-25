@@ -3,9 +3,11 @@ from rest_framework.permissions import IsAuthenticated
 from project.pagination import TrainingPagination
 from .serializers import (
     TrainingSerializer, CommentSerializer,
+    ProfessionSerializer,SubjectSerializer,
+    CaegorySerializer,
     )
 from .models import ( 
-    Training, Comment,
+    Training, Comment,Profession,Category,Subject
     )
 
 from rest_framework.exceptions import NotFound
@@ -21,7 +23,6 @@ class TrainingDetailView(RetrieveAPIView):
 
 class CommentListForTrainingView(ListAPIView):
     serializer_class = CommentSerializer
-    
 
     def get_queryset(self):
         training_id = self.kwargs.get('pk')
@@ -47,3 +48,12 @@ class CommentCreateForTrainingView(CreateAPIView):
             user=self.request.user,
             training= training,
             )
+
+class SubjectListView(ListAPIView):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+
+class CategaryListView(ListAPIView):
+    queryset= Category.objects.all()
+    serializer_class = CaegorySerializer
+
